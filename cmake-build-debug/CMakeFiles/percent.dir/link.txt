@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/percent.dir/main.cpp.o  -o percent 
