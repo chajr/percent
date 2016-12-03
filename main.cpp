@@ -12,9 +12,14 @@ void help()
     cout << "    nfp {value, percent} - number from percent, " << std::endl;
 }
 
-float pfn(char* arg2, char* arg3)
+double pfn(char* argv[])
 {
-    return 0;
+    if (argv[2] == 0 && argv[3] == 0) {
+        help();
+        exit(0);
+    }
+
+    return (atof(argv[2]) / 100) * atof(argv[3]);
 }
 
 int main(int argc, char* argv[])
@@ -34,12 +39,7 @@ int main(int argc, char* argv[])
 
     switch (key) {
         case 1:
-            if (argv[2] == 0 && argv[3] == 0) {
-                help();
-                return 0;
-
-            }
-            cout << pfn(argv[2], argv[3]) << endl;
+            cout << pfn(argv) << endl;
             break;
         case 2:
             cout << "bla" <<endl;
