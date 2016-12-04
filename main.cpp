@@ -10,9 +10,9 @@ void help()
     cout << "Commands:" << std::endl;
     cout << "    pfn {value, percent} - percent from number, calculate percentage value from given number" << endl;
     cout << "    nfp {value, percent value} - number from percent, calculate number value from given percent" << endl;
-    cout << "    fuel {fuel consumed, distance} - " << endl;
-    cout << "    pi {value one, value two} - " << endl;
-    cout << "    pd {value one, value two} - " << endl;
+    cout << "    fuel {fuel consumed, distance} - calculate middle fuel consumption for unit of distance" << endl;
+    cout << "    pi {bigger value, lower value} - percentage increase form given values" << endl;
+    cout << "    pd {lower value, bigger value} - percentage decrease form given values" << endl;
 }
 
 double pfn(char* argv[])
