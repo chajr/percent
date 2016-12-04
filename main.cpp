@@ -35,6 +35,26 @@ double nfp(char* argv[])
     return (atof(argv[3]) / atof(argv[2])) * 100;
 }
 
+double pi(char* argv[])
+{
+    if (argv[2] == 0 && argv[3] == 0) {
+        help();
+        exit(0);
+    }
+
+    return ((atof(argv[2]) - atof(argv[3])) / atof(argv[3])) * 100;
+}
+
+double pd(char* argv[])
+{
+    if (argv[2] == 0 && argv[3] == 0) {
+        help();
+        exit(0);
+    }
+
+    return ((atof(argv[3]) - atof(argv[2])) / atof(argv[3])) * 100;
+}
+
 int main(int argc, char* argv[])
 {
     int key;
@@ -42,6 +62,8 @@ int main(int argc, char* argv[])
         {string("pfn"), 1},
         {string("nfp"), 2},
         {string("fuel"), 3},
+        {string("pi"), 4},
+        {string("pd"), 5},
     };
 
     if (argv[1] == 0) {
@@ -60,6 +82,12 @@ int main(int argc, char* argv[])
             break;
         case 3:
             cout << nfp(argv) << "l" << endl;
+            break;
+        case 4:
+            cout << pi(argv) << "%" << endl;
+            break;
+        case 5:
+            cout << pd(argv) << "%" << endl;
             break;
 
         default:
